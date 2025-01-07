@@ -9,7 +9,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "devDependencies": {
-    "@types/node": "^20.17.11",
+    "@types/node": "^20.17.12",
     "bun-types": "^1.1.42",
     "rimraf": "^5.0.10",
     "typescript": "^5.7.2"
@@ -37,14 +37,18 @@
   ],
   "license": "MIT",
   "scripts": {
+    "source": "generate-source --exclude=**/dist/**,.gitignore,bun.lockb --output=source.md",
     "dev": "bun run src/index.ts --watch",
     "build": "tsc && tsc -p tsconfig.build.json",
     "clean": "rimraf dist",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "commit": "commit",
+    "split-code": "split-code source=combined.ts markers=src/,lib/ outputDir=./output",
+    "publish-npm": "publish-npm patch"
   },
   "type": "module",
   "types": "dist/index.d.ts",
   "dependencies": {
-    "alvamind-tools": "^1.0.4"
+    "alvamind-tools": "^1.0.20"
   }
 }

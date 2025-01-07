@@ -10,8 +10,6 @@
     "skipLibCheck": true,
     "noEmit": false,
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "lib": ["ESNext"],
     "types": ["bun-types"]
   },

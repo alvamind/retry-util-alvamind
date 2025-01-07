@@ -1,5 +1,6 @@
 // src/index.ts
 import { RetryConfigInterface } from "./interfaces/general.interface";
+export type { RetryConfigInterface };
 
 export class RetryUtil {
   static async withRetry<T>(
